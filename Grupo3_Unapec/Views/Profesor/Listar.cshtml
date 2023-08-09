@@ -1,0 +1,40 @@
+﻿@model List<Grupo3_Unapec.Presentation.Models.Profesor>
+
+<h2>Listado de Profesores</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Especialidad</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Teléfono</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var profesor in Model)
+        {
+            <tr>
+                <td>@profesor.Id</td>
+                <td>@profesor.Nombre</td>
+                <td>@profesor.Apellido</td>
+                <td>@profesor.Email</td>
+                <td>@profesor.Especialidad</td>
+                <td>@profesor.FechaNacimiento.ToShortDateString()</td>
+                <td>@profesor.Telefono</td>
+                <td>
+                    <a asp-action="Detalles" asp-route-id="@profesor.Id">Detalles</a> |
+                    <a asp-action="Actualizar" asp-route-id="@profesor.Id">Actualizar</a> |
+                    <a asp-action="Eliminar" asp-route-id="@profesor.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    <a asp-action="Crear">Crear nuevo profesor</a>
+</p>

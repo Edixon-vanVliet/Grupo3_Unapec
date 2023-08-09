@@ -1,0 +1,26 @@
+﻿@model Grupo3_Unapec.Presentation.Models.Profesor
+
+<h2>Eliminar Profesor</h2>
+
+<div>
+    <h4>¿Estás seguro de que deseas eliminar este profesor?</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Nombre</dt>
+        <dd class="col-sm-10">@Model.Nombre</dd>
+        <dt class="col-sm-2">Apellido</dt>
+        <dd class="col-sm-10">@Model.Apellido</dd>
+        <dt class="col-sm-2">Email</dt>
+        <dd class="col-sm-10">@Model.Email</dd>
+        <dt class="col-sm-2">Especialidad</dt>
+        <dd class="col-sm-10">@Model.Especialidad</dd>
+        <dt class="col-sm-2">Fecha de Nacimiento</dt>
+        <dd class="col-sm-10">@Model.FechaNacimiento.ToShortDateString()</dd>
+        <dt class="col-sm-2">Teléfono</dt>
+        <dd class="col-sm-10">@Model.Telefono</dd>
+    </dl>
+</div>
+<form asp-action="Eliminar" asp-route-id="@Model.Id" method="post">
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Listar">Cancelar</a>
+</form>
