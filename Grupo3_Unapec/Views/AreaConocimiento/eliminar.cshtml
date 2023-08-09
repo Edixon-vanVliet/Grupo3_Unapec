@@ -1,0 +1,14 @@
+﻿@model Grupo3_Unapec.Presentation.Models.AreaConocimiento
+
+<h2>Eliminar Área de Conocimiento</h2>
+
+<div class="alert alert-warning">
+    <p>¿Estás seguro de que deseas eliminar el Área de Conocimiento con ID @Model.ID_Area?</p>
+    <form asp-action="Eliminar" method="post">
+        <input type="hidden" asp-for="ID_Area" />
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+
+
