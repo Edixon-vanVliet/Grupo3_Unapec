@@ -1,0 +1,32 @@
+﻿@model List<Titulacion>
+
+<h1>Listado de Titulaciones</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Duración</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var titulacion in Model)
+        {
+            <tr>
+                <td>@titulacion.ID_Titulacion</td>
+                <td>@titulacion.Nombre</td>
+                <td>@titulacion.Descripcion</td>
+                <td>@titulacion.Duracion</td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@titulacion.ID_Titulacion">Editar</a> |
+                    <a asp-action="Eliminar" asp-route-id="@titulacion.ID_Titulacion">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Crear" class="btn btn-primary">Agregar Titulación</a>
