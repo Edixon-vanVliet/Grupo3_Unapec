@@ -1,0 +1,17 @@
+﻿@model Grupo3_Unapec.Presentation.Models.AreaConocimiento
+
+<h2>Actualizar Área de Conocimiento</h2>
+
+<form asp-action="Actualizar" method="post">
+    <input type="hidden" asp-for="ID_Area" />
+    <div class="form-group">
+        <label for="ID_Departamento">ID Departamento</label>
+        <input type="number" class="form-control" id="ID_Departamento" name="ID_Departamento" value="@Model.ID_Departamento" required>
+    </div>
+    <div class="form-group">
+        <label for="Nombre_Area">Nombre del Área</label>
+        <input type="text" class="form-control" id="Nombre_Area" name="Nombre_Area" value="@Model.Nombre_Area" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>
+
